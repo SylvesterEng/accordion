@@ -21,12 +21,35 @@
     .image {
         height: inherit;
         width: 100%;
-        transition: 0.5s ease;
     }
 
     .current {
         width: 40%;
         transition: 1s ease;
+        position: relative;
+    }
+
+    pre {
+        display: none;
+        width: 0%;
+    }
+
+    .current > pre > span {
+        margin: 20px;
+        margin-top: 30px;
+        line-height: 50px;
+        transition: 2s 1s ease;
+        transform: translate(100%);
+    }
+
+    .current > pre {
+        display: block;
+        position: absolute;
+        bottom: -14px;
+        height: 50px;
+        background: rgba(102, 99, 99, 0.822);
+        /* width: 100%; */
+        transition: 1s 1s ease;
     }
 
     </style>
