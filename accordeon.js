@@ -3,7 +3,7 @@ let accordion = class Accordion {
         this.slides = 0;
         this.image = [];
         this.spawned = false;
-        this.tickrate = 1000;
+        this.tickrate = 5000;
         this.isActive = true;
         this.caption = [];
     }
@@ -17,12 +17,6 @@ let accordion = class Accordion {
         this.init()
     }
 
-    removeSlide(num) {
-        this.slides -= num;
-        this.image.pop(num);
-        this.init();
-    }
-
     currentSlide(id) {
         for (let i = 0; i < this.slides; i++) {
             console.log(document.getElementsByClassName(`${i}`)[0].classList.remove('current'))
@@ -33,7 +27,7 @@ let accordion = class Accordion {
     init() {
         document.getElementById('accordion').innerHTML = `<ul id="inneracc"></ul>`;
         for (let i = 0; i < this.slides; i++) {
-            document.getElementById('inneracc').innerHTML += `<li onclick="acc.currentSlide(${i})" onmouseover="acc.currentSlide(${i})" id="item" class="${i} acc-elm"><img src=${this.image[i]} class="image ${i}"><pre class="stateless"><span>${this.caption[i]}</span></pre></li>`;
+            document.getElementById('inneracc').innerHTML += `<li onclick="acc.currentSlide(${i})" onmouseover="acc.currentSlide(${i});" id="item" class="${i} acc-elm"><img src=${this.image[i]} class="image ${i}"><pre class="stateless"><span>${this.caption[i]}</span></pre></li>`;
             document.getElementById('inneracc').firstElementChild.className = '0 acc-elm current';
         }
     }

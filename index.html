@@ -10,7 +10,7 @@
         display: inline-block;    
         height: 300px;
         width: 10%;
-        transition: 1s ease;
+        transition: 2s ease;
     }
 
     #accordion {
@@ -25,31 +25,34 @@
 
     .current {
         width: 40%;
-        transition: 1s ease;
+        transition: 2s ease;
         position: relative;
     }
 
     pre {
+        transition: 1s 1s ease;
         display: none;
         width: 0%;
     }
 
-    .current > pre > span {
-        margin: 20px;
-        margin-top: 30px;
-        line-height: 50px;
-        transition: 2s 1s ease;
-        transform: translate(100%);
-    }
-
-    .current > pre {
-        display: block;
+    .current > pre  {
+        transition: 1s ease;
+        width: 100%;
+        background-color: rgba(92, 92, 92, 0.678);
         position: absolute;
         bottom: -14px;
-        height: 50px;
-        background: rgba(102, 99, 99, 0.822);
-        /* width: 100%; */
-        transition: 1s 1s ease;
+        height: 60px;
+        display: block;
+        overflow: hidden;
+    }
+
+    .current > pre >span {
+        transition: 1s ease;
+        width: 100%;
+        display: inline-block;
+        overflow: hidden;
+        line-height: 50px;
+        margin: 0px 50px;
     }
 
     </style>
@@ -60,5 +63,6 @@
 <script src="accordeon.js"></script>
 
 <script>let acc = new accordion(); acc.init()</script>
+<script>let me = new accordion(); me.init()</script>
 </body>
 </html>
