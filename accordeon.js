@@ -1,10 +1,10 @@
 let accordion = class Accordion {
     constructor() {
         this.slides = 0;
-        this.image = [];
-        this.spawned = false;
         this.tickrate = 5000;
+        // this.spawned = false;
         this.isActive = true;
+        this.image = [];
         this.caption = [];
     }
 
