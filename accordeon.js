@@ -1,5 +1,16 @@
+/* 
+    W.I.P.
+    1. Fix bug counter images
+    2. Make smooth animation on image change
+    3. Make an extend class to create images there
+    4. Beter structure code
+*/
+
+
+// Define Accordion class
 let accordion = class Accordion {
     constructor() {
+        // Setup Object property's
         this.slides = 0;
         this.tickrate = 5000;
         // this.spawned = false;
@@ -8,18 +19,27 @@ let accordion = class Accordion {
         this.caption = [];
     }
 
+    /*Functions 
+        1. addslide(image path: 'images/te.jpeg', caption: 'Hello world'); Add an image and caption
+        2. currentSlide(id: 1); Select a highlighted slide
+        3. init(); Refresh command to update the accordeon after changes. 
+        4. autoplay(boolean); Enable or disable autoplay function for the accordeon effect
+        5. test(); Quick setup example
+    */
+        
     addSlide(image, caption) {
+        //this keyword refers to constructor init's;
         if (this.slides <= 0) { this.slides = 0 }
         this.slides += 1;
         this.image.push(image);
         this.caption.push(caption);
-        console.log(caption)
-        this.init()
+        console.log(caption);
+        this.init();
     }
 
     currentSlide(id) {
         for (let i = 0; i < this.slides; i++) {
-            console.log(document.getElementsByClassName(`${i}`)[0].classList.remove('current'))
+            console.log(document.getElementsByClassName(`${i}`)[0].classList.remove('current'));
         }
         document.getElementsByClassName(`${id}`)[0].classList.add('current');
     }
@@ -53,7 +73,7 @@ let accordion = class Accordion {
 
     test() {
         for (let i = 0; i < 5; i++) {
-            this.addSlide('images/te.jpeg');
+            this.addSlide('images/te.jpeg', `${i}`);
         }
     }
 }
