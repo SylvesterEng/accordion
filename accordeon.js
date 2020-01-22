@@ -33,17 +33,19 @@ let accordion = class Accordion {
     }
 
     autoplay(bool) {
+        let counter;
         if (bool == true) {
             this.isActive = true;
-        } else { this.isActive = false; this.currentSlide(0) }
-        let counter = 0;
+            this.currentSlide(0);
+        } else { this.isActive = false; this.currentSlide(0); counter = 0; }
+        counter = 0;
         setInterval(() => {
             if (this.isActive == true) {
                 counter++;
                 if (counter >= this.slides || counter <= this.slides) {
                     if (counter !== this.slides) {
                         this.currentSlide(counter);
-                    } else { counter = 0; this.currentSlide(0) }
+                    } else { counter = 0; this.currentSlide(0); }
                 }
             }
         }, this.tickrate);
